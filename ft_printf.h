@@ -17,8 +17,10 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int ft_print_char(const char *str);
-
+int ft_print_char(int c);
+int ft_print_str( char *str);
+int check_format(va_list argp, const char format);
+int     ft_printf(const char *str, ...);
 
 
 

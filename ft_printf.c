@@ -12,21 +12,22 @@
 
 #include "ft_printf.h"
 
-
 int ft_print_char(int c)
 {
     write(1, &c, 2);
     return (1);
 }
 
-int check_format(const char format, va_list argp)
+int check_format(va_list argp, const char format)
 {
     int print_lenght;
 
     print_lenght = 0;
     if (format == 'c')
         print_lenght += ft_print_char(va_arg(argp, int));
-    return (print_lenght)
+    else //(format == 's');
+        print_lenght += ft_print_str(va_arg(argp, char *));
+    return (print_lenght);
 }
 
 int     ft_printf(const char *str, ...)
@@ -48,8 +49,8 @@ int     ft_printf(const char *str, ...)
         else
         {
             print_lenght += ft_print_char(str[i]);
-            i++;
         }
+        i++;
     }
     va_end(argp);
     return (print_lenght);
@@ -59,6 +60,7 @@ int     ft_printf(const char *str, ...)
 
 int main (void)
 {
-    ft_printf("ciao");
-    printf("ciao\n");
+    char *a = "sorin";
+    //printf("%s", a);
+    ft_printf("%s\n%c", a, 'e');
 }
