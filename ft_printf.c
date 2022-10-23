@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:06:41 by sopopa            #+#    #+#             */
-/*   Updated: 2022/10/22 23:26:08 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/10/23 10:38:59 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int check_format(va_list argp, const char format)
         print_lenght += ft_print_char(va_arg(argp, int));
     else if (format == 's')
         print_lenght += ft_print_str(va_arg(argp, char *));
-    // else if (format == 'p')
-    //     print_lenght += ft_print_hex_point()
+    else if (format == 'p')
+        print_lenght += ft_print_pointaddress(va_arg(argp, unsigned long long));
     return (print_lenght);
 }
 
@@ -64,9 +64,10 @@ int     ft_printf(const char *str, ...)
 int main (void)
 {
     int r;
+    r = 2333;
    
 
     
-    printf("%p\n", &r);
-    //ft_printf("%s\n%c", a, 'e');
+    //printf("%p\n", &r);
+    ft_printf("%p\n", r);
 }
