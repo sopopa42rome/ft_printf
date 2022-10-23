@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print.c                                         :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:06:41 by sopopa            #+#    #+#             */
-/*   Updated: 2022/10/15 15:28:26 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/10/22 23:26:08 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft/libft.h"
 
 int ft_print_char(int c)
 {
@@ -25,8 +26,10 @@ int check_format(va_list argp, const char format)
     print_lenght = 0;
     if (format == 'c')
         print_lenght += ft_print_char(va_arg(argp, int));
-    else //(format == 's');
+    else if (format == 's')
         print_lenght += ft_print_str(va_arg(argp, char *));
+    // else if (format == 'p')
+    //     print_lenght += ft_print_hex_point()
     return (print_lenght);
 }
 
@@ -60,7 +63,10 @@ int     ft_printf(const char *str, ...)
 
 int main (void)
 {
-    char *a = "sorin";
-    //printf("%s", a);
-    ft_printf("%s\n%c", a, 'e');
+    int r;
+   
+
+    
+    printf("%p\n", &r);
+    //ft_printf("%s\n%c", a, 'e');
 }
