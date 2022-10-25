@@ -33,11 +33,8 @@ void ft_print_hex(unsigned long ptr)
 {   
 	if (ptr >= 16)
 	{	
-		//printf("%lu\n", ptr);
 		ft_print_hex(ptr / 16);
-		//printf(" 2: %lu", ptr);
 		ft_print_hex(ptr % 16);
-		//printf(" 3: %lu", ptr);
 	}
 	else
 	{

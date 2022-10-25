@@ -24,5 +24,9 @@ int ft_printf(const char *str, ...);
 int ft_print_pointaddress(unsigned long long ptr);
 void ft_print_hex(unsigned long ptr);
 int ft_print_len(unsigned long ptr);
+int	ft_print_number(int num);
+char *ft_convert_integer(unsigned int n);
+int ft_print_unsigned(unsigned int num);
+static int	check_length_int(unsigned int n);
 
 #endif
