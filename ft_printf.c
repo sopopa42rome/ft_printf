@@ -36,6 +36,8 @@ int check_format(va_list argp, const char format)
 		print_lenght += ft_print_unsigned(va_arg(argp, unsigned int));
 	else if (format == 'x'|| format == 'X')
 		print_lenght += ft_print_hexadecimal(va_arg(argp, unsigned long long), format);
+	else if( format == '%')
+		print_lenght += ft_print_percent();
 	return (print_lenght);
 }
 
@@ -73,8 +75,5 @@ int main (void)
 	unsigned int r;
 	r = 3434543;
    
-
-	
-	printf("%x\n", r);
-	ft_printf("%x\n", r);
+	ft_printf("%%\n", r);
 }

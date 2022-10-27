@@ -40,3 +40,9 @@ int ft_print_len(unsigned long ptr)
 	}
 	return (len);
 }
+
+int ft_print_percent(void)
+{
+	write(1, "%", 1);
+	return (1);
+}

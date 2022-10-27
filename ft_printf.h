@@ -30,5 +30,6 @@ int ft_print_unsigned(unsigned int num);
 static int	check_length_int(unsigned int n);
 int ft_print_hexadecimal(unsigned long long ptr, const char format);
 void ft_check_format(unsigned long ptr, const char format);
+int ft_print_percent(void);
 
 #endif
