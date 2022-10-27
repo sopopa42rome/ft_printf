@@ -23,18 +23,18 @@ int ft_print_pointaddress(unsigned long long ptr)
 		write (1, "0", 1);
 	else
 	{
-		ft_print_hex(ptr);
+		ft_print_hex_ptr(ptr);
 		print_lenght += ft_print_len(ptr);
 	}
 	return (print_lenght);
 }
 
-void ft_print_hex(unsigned long ptr)
+void ft_print_hex_ptr(unsigned long ptr)
 {   
 	if (ptr >= 16)
 	{	
-		ft_print_hex(ptr / 16);
-		ft_print_hex(ptr % 16);
+		ft_print_hex_ptr(ptr / 16);
+		ft_print_hex_ptr(ptr % 16);
 	}
 	else
 	{
@@ -45,17 +45,4 @@ void ft_print_hex(unsigned long ptr)
 			ft_putchar_fd((ptr - 10 + 'a'), 1);
 		}
 	}
-}
-
-int ft_print_len(unsigned long ptr)
-{
-	int len;
-
-	len = 0;
-	while (ptr != 0)
-	{
-		len++;
-		ptr = ptr / 16;
-	}
-	return (len);
 }

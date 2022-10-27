@@ -22,11 +22,13 @@ int ft_print_str( char *str);
 int check_format(va_list argp, const char format);
 int ft_printf(const char *str, ...);
 int ft_print_pointaddress(unsigned long long ptr);
-void ft_print_hex(unsigned long ptr);
+void ft_print_hex_ptr(unsigned long ptr);
 int ft_print_len(unsigned long ptr);
 int	ft_print_number(int num);
 char *ft_convert_integer(unsigned int n);
 int ft_print_unsigned(unsigned int num);
 static int	check_length_int(unsigned int n);
+int ft_print_hexadecimal(unsigned long long ptr, const char format);
+void ft_check_format(unsigned long ptr, const char format);
 
 #endif

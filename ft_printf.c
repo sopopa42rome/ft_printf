@@ -32,9 +32,10 @@ int check_format(va_list argp, const char format)
 		print_lenght += ft_print_pointaddress(va_arg(argp, unsigned long long));
 	else if (format == 'd' || format == 'i')
 		print_lenght += ft_print_number(va_arg(argp, int));
-	//else if (format == 'u')
-		//print_lenght += ft_print_unsigned(va_arg(argp, unsigned int));
-		
+	else if (format == 'u')
+		print_lenght += ft_print_unsigned(va_arg(argp, unsigned int));
+	else if (format == 'x'|| format == 'X')
+		print_lenght += ft_print_hexadecimal(va_arg(argp, unsigned long long), format);
 	return (print_lenght);
 }
 
@@ -69,11 +70,11 @@ int     ft_printf(const char *str, ...)
 
 int main (void)
 {
-	int r;
-	r = -343;
+	unsigned int r;
+	r = 3434543;
    
 
 	
-	printf("%u\n", r);
-	//ft_printf("%u", r);
+	printf("%x\n", r);
+	ft_printf("%x\n", r);
 }

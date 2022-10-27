@@ -27,3 +27,16 @@ int ft_print_str(char *str)
 	}
 	return (i);    
 }
+
+int ft_print_len(unsigned long ptr)
+{
+	int len;
+
+	len = 0;
+	while (ptr != 0)
+	{
+		len++;
+		ptr = ptr / 16;
+	}
+	return (len);
+}
