@@ -13,15 +13,15 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int ft_print_char(int c)
-{
-	write(1, &c, 2);
+int	ft_print_char(int c)
+{	
+	write(1, &c, 1);
 	return (1);
 }
 
-int check_format(va_list argp, const char format)
+int	check_format(va_list argp, const char format)
 {
-	int print_lenght;
+	int	print_lenght;
 
 	print_lenght = 0;
 	if (format == 'c')
@@ -34,17 +34,17 @@ int check_format(va_list argp, const char format)
 		print_lenght += ft_print_number(va_arg(argp, int));
 	else if (format == 'u')
 		print_lenght += ft_print_unsigned(va_arg(argp, unsigned int));
-	else if (format == 'x'|| format == 'X')
-		print_lenght += ft_print_hexadecimal(va_arg(argp, unsigned long long), format);
-	else if( format == '%')
-		print_lenght += ft_print_percent();
+	else if (format == 'x' || format == 'X')
+		print_lenght += ft_print_hex(va_arg(argp, unsigned int), format);
+	else if (format == '%')
+		print_lenght += write(1, "%", 1);
 	return (print_lenght);
 }
 
-int     ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	print_lenght;
+	int		i;
+	int		print_lenght;
 	va_list	argp;
 
 	i = 0;
@@ -58,22 +58,15 @@ int     ft_printf(const char *str, ...)
 			i++;
 		}
 		else
-		{
 			print_lenght += ft_print_char(str[i]);
-		}
 		i++;
 	}
 	va_end(argp);
-	printf("Lunghezza stringa %d", print_lenght);
 	return (print_lenght);
 }
 
-
-
-int main (void)
-{
-	unsigned int r;
-	r = 3434543;
-   
-	ft_printf("%%\n", r);
-}
+// int main(void)
+// {	
+// 	printf("Print originale: %c", '0' - 256);
+// 	ft_printf("Il mio print: %c", '0' - 256);
+// }

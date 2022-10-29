@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hexadecimal.c                             :+:      :+:    :+:   */
+/*   ft_printf_hexadecimal.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 20:45:41 by sopopa            #+#    #+#             */
-/*   Updated: 2022/10/27 21:05:24 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/10/29 19:13:29 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int ft_print_hexadecimal(unsigned long long ptr, const char format)
+int	ft_print_hexadecimal(unsigned long long ptr, const char format)
 {
-	int print_lenght;
+	int	print_lenght;
 
 	print_lenght = 0;
 	if (ptr == 0)
-		write (1, "0", 1);
+		return (write (1, "0", 1));
 	else
 	{
 		ft_check_format(ptr, format);
@@ -28,8 +28,8 @@ int ft_print_hexadecimal(unsigned long long ptr, const char format)
 	return (print_lenght);
 }
 
-void ft_check_format(unsigned long ptr, const char format)
-{   
+void	ft_check_format(unsigned long long ptr, const char format)
+{
 	if (ptr >= 16)
 	{	
 		ft_check_format(ptr / 16, format);
@@ -42,9 +42,9 @@ void ft_check_format(unsigned long ptr, const char format)
 		else
 		{
 			if (format == 'x')
-			ft_putchar_fd((ptr - 10 + 'a'), 1);
-		    if (format == 'X')
-			ft_putchar_fd((ptr - 10 + 'A'), 1);
+				ft_putchar_fd((ptr - 10 + 'a'), 1);
+			if (format == 'X')
+				ft_putchar_fd((ptr - 10 + 'A'), 1);
 		}
 	}
 }

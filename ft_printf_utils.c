@@ -13,24 +13,27 @@
 #include "ft_printf.h"
 #include "libft/libft.h"
 
-int ft_print_str(char *str)
+int	ft_print_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str == NULL)
-		write(1, "(null)", 6);
-	while(str[i])
 	{
-	   write(1, &str[i], 1);
-	   i++;
+		write(1, "(null)", 6);
+		return (6);
 	}
-	return (i);    
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (i);
 }
 
-int ft_print_len(unsigned long ptr)
+int	ft_print_len(unsigned long ptr)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (ptr != 0)
@@ -41,8 +44,21 @@ int ft_print_len(unsigned long ptr)
 	return (len);
 }
 
-int ft_print_percent(void)
+int	ft_print_percent(void)
 {
 	write(1, "%", 1);
 	return (1);
+}
+
+int	check_length_int(unsigned int n)
+{
+	size_t	len;
+
+	len = 1;
+	while (n > 9)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }
