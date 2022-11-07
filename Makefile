@@ -6,7 +6,7 @@
 #    By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 21:23:18 by sopopa            #+#    #+#              #
-#    Updated: 2022/10/29 19:50:51 by sopopa           ###   ########.fr        #
+#    Updated: 2022/11/07 14:33:54 by sopopa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ FLAGS	= -Wall -Wextra -Werror
 INCS	= ./
 
 .c.o :
-	${CC} $(FLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
+	${CC} $(FLAGS) -c $< -o $(<:.c=.o) -I $(INCS)
 
 
 $(NAME): ${OBJS}

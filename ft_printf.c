@@ -6,7 +6,7 @@
 /*   By: sopopa <sopopa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:06:41 by sopopa            #+#    #+#             */
-/*   Updated: 2022/10/23 10:38:59 by sopopa           ###   ########.fr       */
+/*   Updated: 2022/11/07 14:24:06 by sopopa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,3 @@ int	ft_printf(const char *str, ...)
 	va_end(argp);
 	return (print_lenght);
 }
-
-// int main(void)
-// {	
-// 	printf("Print originale: %c", '0' - 256);
-// 	ft_printf("Il mio print: %c", '0' - 256);
-// }
